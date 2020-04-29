@@ -1,0 +1,19 @@
+global:
+    scrape_interval: 15s
+    external_labels:
+      monitor: 'string-service-monitor'
+
+scrape_configs:
+  - job_name: 'prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['localhost:9090']
+        labels:
+          group: 'local'
+
+  - job_name: 'string-service'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['localhost:9000']
+        labels:
+          group: 'string-service'

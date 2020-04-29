@@ -1,0 +1,33 @@
+
+http:
+  host: 114.67.98.210
+  port: 9090
+
+
+discover:
+  Host: 114.67.98.210
+  port: 8500
+  instanceId: gateway-service-localhost
+  serviceName: gateway
+
+
+config:
+  id: config-service
+  profile: "dev"
+  label: "master"
+
+trace:
+  host: 114.67.98.210
+  port: 9411
+  url: /api/v2/spans
+
+rpc:
+  port: 1111
+
+auth:
+  permitAll:
+    -
+      /oauth/**
+    -
+      /string/**
+

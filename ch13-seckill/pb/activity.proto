@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package pb;
+
+service ActivityService{
+    rpc secKill(SecRequest) returns (SecResponse){}
+}
+
+
+message Activity {
+    int64 ActivityId = 1;    // 活动Id
+    string ActivityName = 2; // 活动名称
+    int64 ProductId = 3;     // 商品Id
+    int64 StartTime = 4;     // 开始时间
+    int64 EndTime = 5;       // 结束时间
+    int64 Total = 6;         // 商品总数
+    int64 Status = 7;        // 状态
+    string StartTimeStr = 8; // 
+    string EndTimeStr = 9;
+    string StatusStr = 10;
+    int64 Speed = 11;
+    int64 BuyLimit = 12;
+    float64 BuyRate = 13;
+}
+
+message SecProductInfoConf {
+    int64 ProductId = 1; // 商品id
+	int64 StartTime = 2; // 开始时间
+    int64 EndTime = 3;   // 结束时间
+    int64 Status = 4;    // 状态
+    int64 Total = 5;     // 商品总数
+    int64 Left = 6;      // 剩余商品数量
+    int64 OnePersonBuyLimit = 7; // 一个人购买限制
+    float64 BuyRate = 8; // 买中几率
+    int64 SoldMaxLimit = 9; // 每秒最多能卖多少个
+}

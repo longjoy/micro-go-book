@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package pb;
+
+service StringService{
+    rpc Concat(StringRequest) returns (StringResponse) {}
+    rpc LotsOfServerStream(StringRequest) returns (stream StringResponse) {}
+    rpc LotsOfClientStream(stream StringRequest) returns (StringResponse) {}
+    rpc LotsOfServerAndClientStream(stream StringRequest) returns (stream StringResponse) {}
+}
+
+message StringRequest {
+    string A = 1;
+    string B = 2;
+}
+
+message StringResponse {
+    string Ret = 1;
+    string err = 2;
+}

@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "cb972205-229a-4b1f-b023-3d354af9113c",
+		"name": "seckill",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:9030/activity/create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"activity_name\":\"测试秒杀4\",\n\t\"product_id\": 2,\n\t\"start_time\": 1573300360,\n\t\"end_time\": 1573400360,\n\t\"total\": 100,\n\t\"speed\":1,\n\t\"buy_limit\":1,\n\t\"buy_rate\":0.2\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:9030/activity/create",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9030",
+					"path": [
+						"activity",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:9030/activity/list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:9030/activity/list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9030",
+					"path": [
+						"activity",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:9031/sec/list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:9031/sec/list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9031",
+					"path": [
+						"sec",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:9031/sec/kill\n",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"product_id\":2,\n\t\"user_id\": 1,\n\t\"src\": \"192.168.199.1\",\n\t\"auth_code\": \"auth_code\",\n\t\"time\": 1571148383,\n\t\"client_refence\": \"test\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:9031/sec/kill",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9031",
+					"path": [
+						"sec",
+						"kill"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:9031/sec/kill\n",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "product_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "src",
+							"value": "192.168.199.1",
+							"type": "text"
+						},
+						{
+							"key": "auth_code",
+							"value": "userauthcode",
+							"type": "text"
+						},
+						{
+							"key": "time",
+							"value": "1571148383",
+							"type": "text"
+						},
+						{
+							"key": "client_refence",
+							"value": "test",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:9031/sec/kill",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9031",
+					"path": [
+						"sec",
+						"kill"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package pb;
+
+
+service OAuthService{
+    // token 校验
+    rpc CheckToken(CheckTokenRequest) returns (CheckTokenResponse);
+}
+
+message CheckTokenRequest {
+    string token = 1;
+}
+
+
+message ClientDetails {
+    string clientId = 1;
+    int32 accessTokenValiditySeconds = 2;
+    int32 refreshTokenValiditySeconds = 3;
+    repeated string authorizedGrantTypes = 4;
+}
+
+message UserDetails {
+    int64 userId = 1;
+    string username = 2;
+    repeated string authorities = 3;
+}
+
+
+message CheckTokenResponse{
+    UserDetails userDetails = 1;
+    ClientDetails clientDetails = 2;
+    bool isValidToken = 3;
+    string err = 4;
+}

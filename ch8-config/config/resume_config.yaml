@@ -1,0 +1,9 @@
+RegisterTime: "2019-6-18 10:00:00"
+Address: "Shanghai"
+ResumeInformation:
+  Name: "aoho"
+  Sex: "male"
+  Age: 20
+  Habits:
+    - "Basketball"
+    - "Running"

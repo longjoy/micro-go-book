@@ -1,0 +1,89 @@
+// In general, while you can use proto2 (the current default protocol buffers
+// version), we recommend that you use proto3 with gRPC as it lets you use the
+// full range of gRPC-supported languages, as well as avoiding compatibility
+// issues with proto2 clients talking to proto3 servers and vice versa.
+syntax = "proto3";
+
+// The package name determines the name of the directories that truss creates
+// for `package echo;` truss will create the directory "echo-service".
+package echo;
+
+import "github.com/metaverse/truss/deftree/googlethirdparty/annotations.proto";
+
+service SkAppService {
+    // Echo "echos" the incoming string
+    rpc Seckill (SecRequest) returns (SecResponse) {
+        option (google.api.http) = {
+      // All fields (In) are query parameters of the http request unless otherwise specified
+      post: "/sec"
+
+      additional_bindings {
+        // Trailing slashes are different routes
+        post: "/sec/"
+      }
+    };
+    }
+
+    // Louder "echos" the incoming string with `Loudness` additional exclamation marks
+    rpc SecInfo (SecInfoRequest) returns (SecInfoResponse) {
+        option (google.api.http) = {
+            get: "/sec/info"
+
+            additional_bindings {
+            // Trailing slashes are different routes
+            get: "/sec/info"
+        }
+      };
+    }
+
+
+    // Louder "echos" the incoming string with `Loudness` additional exclamation marks
+    rpc SecInfoList (SecInfoListRequest) returns (SecInfoListResponse) {
+        option (google.api.http) = {
+            get: "/sec/list"
+
+            additional_bindings {
+            // Trailing slashes are different routes
+            get: "/sec/list"
+        }
+      };
+    }
+}
+
+message SecRequest {
+    int32 ProductId = 1;
+    string Source = 2;
+    string AuthCode = 3;
+    int64 SecTime = 4;
+    string Nance = 5;
+    int32 UserId = 6;
+    string UserAuthSign = 7;
+    string ClientAddr = 8;
+    string ClientRefence = 9;
+}
+
+message SecResponse {
+    int32 ProductId = 1;
+    int32 UserId = 2;
+    string Token = 3;
+    int64 TokenTime = 4;
+    int32 Code = 5;
+}
+
+
+message SecInfoRequest {
+    int32 productId = 1;
+}
+
+message SecInfoResponse {
+    int32 productId = 1;
+}
+
+message SecInfoListRequest {
+    string Out = 1;
+}
+
+message SecInfoListResponse {
+    string Out = 1;
+}
+

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package pb;
+
+service StringService{
+    rpc Diff(StringRequest) returns (StringResponse){}
+}
+
+message StringRequest {
+    string request_type = 1;
+    string a = 2;
+    string b = 3;
+}
+
+message StringResponse {
+    string result = 1;
+    string err = 2;
+}
