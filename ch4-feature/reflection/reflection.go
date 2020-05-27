@@ -23,8 +23,18 @@ func (hero *Hero) SayHello(name string)  {
 	fmt.Println("Hello " + name, ", I am " + hero.Name)
 }
 
+/**
+ *  原书中81页的预期输出
+ * `I am running at speed d`
+ * ------------------------->>
+ *  现修正为
+ * `I am running at speed 100`
+ *
+ *
+ *  感谢@luckyzachary的指正
+ */
 func (hero *Hero) Run() string {
-	fmt.Println("I am running at speed " + string(hero.Speed))
+	fmt.Println("I am running at speed ", hero.Speed)
 	return "Running"
 }
 
@@ -33,7 +43,6 @@ func main()  {
 
 	typeOfHero := reflect.TypeOf(Hero{})
 	fmt.Printf("Hero's type is %s, kind is %s", typeOfHero, typeOfHero.Kind())
-
 
 	//fmt.Printf("*Hero's type is %s, kind is %s",reflect.TypeOf(&Hero{}), reflect.TypeOf(&Hero{}).Kind())
 
