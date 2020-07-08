@@ -48,7 +48,7 @@ func AntiSpam(req *model.SecRequest) (err error) {
 				secLimit: &SecLimit{},
 				minLimit: &MinLimit{},
 			}
-			SecLimitMgrVars.IpLimitMap[req.ClientAddr] = limit
+			SecLimitMgrVars.UserLimitMap[req.ClientAddr] = limit
 		}
 
 		secIdCount = limit.secLimit.Count(req.AccessTime) //获取该秒内该用户访问次数

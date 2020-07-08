@@ -20,7 +20,7 @@ message Activity {
     string StatusStr = 10;
     int64 Speed = 11;
     int64 BuyLimit = 12;
-    float64 BuyRate = 13;
+    double BuyRate = 13;
 }
 
 message SecProductInfoConf {
@@ -31,6 +31,6 @@ message SecProductInfoConf {
     int64 Total = 5;     // 商品总数
     int64 Left = 6;      // 剩余商品数量
     int64 OnePersonBuyLimit = 7; // 一个人购买限制
-    float64 BuyRate = 8; // 买中几率
+    double BuyRate = 8; // 买中几率
     int64 SoldMaxLimit = 9; // 每秒最多能卖多少个
 }

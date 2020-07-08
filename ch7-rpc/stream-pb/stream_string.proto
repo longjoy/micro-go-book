@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package pb;
+package stream_pb;
 
 service StringService{
     rpc Concat(StringRequest) returns (StringResponse) {}

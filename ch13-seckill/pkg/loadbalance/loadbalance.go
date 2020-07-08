@@ -44,9 +44,6 @@ func (loadBalance *WeightRoundRobinLoadBalance) SelectService(services []*common
 		w.CurWeight += w.Weight
 
 		total += w.Weight
-		if w.Weight < w.Weight {
-			w.Weight++
-		}
 		if best == nil || w.CurWeight > best.CurWeight {
 			best = w
 		}
