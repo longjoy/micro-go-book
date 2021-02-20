@@ -98,6 +98,7 @@ func (consulClient *DiscoveryClientInstance) DiscoverServices(serviceName string
 	}
 	// 申请锁
 	consulClient.mutex.Lock()
+	defer consulClient.mutex.Unlock()
 	// 再次检查是否监控
 	instanceList, ok = consulClient.instancesMap.Load(serviceName)
 	if ok {
@@ -136,7 +137,6 @@ func (consulClient *DiscoveryClientInstance) DiscoverServices(serviceName string
 			plan.Run(consulClient.config.Address)
 		}()
 	}
-	defer consulClient.mutex.Unlock()
 
 	// 根据服务名请求服务实例列表
 	entries, _, err := consulClient.client.Service(serviceName, "", false, nil)
