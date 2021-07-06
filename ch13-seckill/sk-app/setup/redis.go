@@ -107,7 +107,7 @@ func syncIpBlackList(conn *redis.Client) {
 					conf.SecKill.IPBlackMap[v] = true
 				}
 			}
-			conf.SecKill.RWBlackLock.Lock()
+			conf.SecKill.RWBlackLock.Unlock()
 
 			lastTime = curTime
 			log.Printf("sync ip list from redis success, ip[%v]", ipList)
