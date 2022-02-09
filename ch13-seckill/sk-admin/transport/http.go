@@ -43,7 +43,7 @@ func MakeHttpHandler(ctx context.Context, endpoints endpts.SkAdminEndpoints, zip
 	))
 
 	r.Methods("POST").Path("/product/create").Handler(kithttp.NewServer(
-		endpoints.GetProductEndpoint,
+		endpoints.CreateProductEndpoint,
 		decodeCreateProductCheckRequest,
 		encodeResponse,
 		options...,

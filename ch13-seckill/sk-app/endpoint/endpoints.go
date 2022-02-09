@@ -21,7 +21,7 @@ func (ue SkAppEndpoints) HealthCheck() bool {
 }
 
 type SecInfoRequest struct {
-	productId int `json:"id"`
+	ProductId int `json:"id"`
 }
 
 type Response struct {
@@ -41,7 +41,7 @@ func MakeSecInfoEndpoint(svc service.Service) endpoint.Endpoint {
 	return func(ctx context.Context, request interface{}) (response interface{}, err error) {
 		req := request.(SecInfoRequest)
 
-		ret := svc.SecInfo(req.productId)
+		ret := svc.SecInfo(req.ProductId)
 		return Response{Result: ret, Error: nil}, nil
 	}
 }

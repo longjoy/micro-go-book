@@ -33,7 +33,7 @@ func MakeHttpHandler(ctx context.Context, endpoints endpts.SkAppEndpoints, zipki
 		zipkinServer,
 	}
 
-	r.Methods("GET").Path("/sec/info").Handler(kithttp.NewServer(
+	r.Methods("POST").Path("/sec/info").Handler(kithttp.NewServer(
 		endpoints.GetSecInfoEndpoint,
 		decodeSecInfoRequest,
 		encodeResponse,
