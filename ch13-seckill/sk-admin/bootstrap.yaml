@@ -12,6 +12,7 @@ discover:
   port: 8500
   instanceId: sk-admin-localhost
   serviceName: sk-admin
+  weight: 10
 
 
 config:

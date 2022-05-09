@@ -13,6 +13,7 @@ discover:
   port: 8500
   instanceId: sk-app-localhost
   serviceName: sk-app # 要缓存sk-app
+  weight: 10
 
 
 config:

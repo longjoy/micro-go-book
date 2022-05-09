@@ -57,7 +57,7 @@ func (consulClient *DiscoveryClientInstance) Register(instanceId, svcHost, healt
 
 	if err != nil {
 		if logger != nil {
-			logger.Println("Register Service Error!")
+			logger.Println("Register Service Error!", err)
 		}
 		return false
 	}
@@ -78,7 +78,7 @@ func (consulClient *DiscoveryClientInstance) DeRegister(instanceId string, logge
 
 	if err != nil {
 		if logger != nil {
-			logger.Println("Deregister Service Error!")
+			logger.Println("Deregister Service Error!", err)
 		}
 		return false
 	}
@@ -143,7 +143,7 @@ func (consulClient *DiscoveryClientInstance) DiscoverServices(serviceName string
 	if err != nil {
 		consulClient.instancesMap.Store(serviceName, []*common.ServiceInstance{})
 		if logger != nil {
-			logger.Println("Discover Service Error!")
+			logger.Println("Discover Service Error!", err)
 		}
 		return nil
 	}

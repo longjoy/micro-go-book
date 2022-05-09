@@ -9,6 +9,7 @@ discover:
   port: 8500
   instanceId: gateway-service-localhost
   serviceName: gateway
+  weight: 10
 
 
 config:
