@@ -16,8 +16,8 @@ func main()  {
     // 获取读锁
 	for i := 0 ; i < 5 ;i ++{
 		go func(i int) {
-			rwLock.RLocker()
-			defer rwLock.RLocker()
+			rwLock.RLock()
+			defer rwLock.RUnlock()
 			fmt.Println("read func " + strconv.Itoa(i) +" get rlock at " +  time.Now().String())
 			time.Sleep(time.Second)
 		}(i)
